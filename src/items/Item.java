@@ -3,16 +3,17 @@ package items;
 public class Item {
 	
 	//private item attributes
-	private double length;
-	private double width;
-	private double depth;
-	private double weight;
+	private double length; //in cm
+	private double width; //in cm
+	private double height; //in cm
+	private double weight;// in kg
+	private String name;
 	
 	//constructor
-	public Item(double length, double width, double depth, double weight) {
+	public Item(double length, double width, double height, double weight) {
 		this.length = length;
 		this.width= width;
-		this.depth= depth;
+		this.height= height;
 		this.weight= weight;
 	}
 	// getters and setters
@@ -32,12 +33,12 @@ public class Item {
 		this.width = width;
 	}
 
-	public double getDepth() {
-		return depth;
+	public double getheight() {
+		return height;
 	}
 
-	public void setDepth(double depth) {
-		this.depth = depth;
+	public void setheight(double height) {
+		this.height = height;
 	}
 
 	public double getWeight() {
@@ -48,11 +49,36 @@ public class Item {
 		this.weight = weight;
 	}
 	
-	public double getItemVolume() {
-		double volume;
-		volume= this.length * this.weight * this.depth;
-		return volume;
+	public double getArea() {
+		double surArea; // the surface of the bottom of the box
+		surArea= this.length * this.width;
+		return surArea;
 	}
+	
+	public double getItemVolume() {
+		double area = this.getArea();
+		double volume = area* this.height;
+		return volume;
+		
+	}	
+	public void printItemInfo() {
+		String str;
+		str= "Item name: "+ this.name+"/nItem length: "+ this.length+"cm"+"\nItem width: "+ this.width+"cm" +"\nItem height: "+ this.height+"cm" +
+		"\nItem weight: "+this.weight+"kg"; 
+		System.out.println(str);
+		
+	}
+	public static void main(String[] args) {
+        // Create an object of MyClass and test its methods
+        Item obj = new Item(4,5.6,6.7,4.8);
+        
+        obj.printItemInfo();
+        
+        
+        // Call methods, set properties, etc.
+    }
+	
+	
 	
 	
 	
@@ -60,3 +86,9 @@ public class Item {
 	
 	
 }
+
+
+	
+	
+	
+
