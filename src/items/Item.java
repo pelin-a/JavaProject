@@ -10,15 +10,25 @@ public class Item {
 	private String name;
 	
 	//constructor
-	public Item(double length, double width, double height, double weight) {
+	public Item(String name,double length, double width, double height, double weight) {
+		this.name= name;
 		this.length = length;
 		this.width= width;
 		this.height= height;
 		this.weight= weight;
 	}
 	// getters and setters
+	
 	public double getLength() {
 		return length;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public void setLength(double length) {
