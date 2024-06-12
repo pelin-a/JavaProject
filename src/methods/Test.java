@@ -1,6 +1,7 @@
+
+//Pelinsu
 package methods;
 import java.util.Scanner;
-import methods.Calculations;
 import items.Item;
 public class Test{
 
@@ -21,16 +22,18 @@ public class Test{
 			System.out.println("Enter the number of LCD Screens:");
 			int numLcdScreens = scanner.nextInt();
 			
-			Calculations calc = new Calculations();
-			
-      calc.addOrder(laptop,numLaptops);
-      
-      calc.addOrder(mouse,numMice);
-      calc.addOrder(desktop,numDesktops);
-      calc.addOrder(lcdScreen,numLcdScreens);
-      calc.bestShipping();
-			System.out.println(calc.getBestNumBigBoxes());
-			System.out.println(calc.getBestNumSmallBoxes());
+			BestShipment calc = new BestShipment();
+			  calc.addItem(laptop,mouse,desktop,lcdScreen);
+			  calc.addOrder(laptop,numLaptops);
+			  calc.addOrder(mouse,numMice); 
+			  calc.addOrder(desktop,numDesktops); 
+			  calc.addOrder(lcdScreen,numLcdScreens); 
+			  calc.bestShipping();
+			  
+			  System.out.println("Best Shipping Method:");
+			    System.out.println("Big Containers: " + calc.getBestNumBigBoxes());
+			    System.out.println("Small Containers: " + calc.getBestNumSmallBoxes());
+			    System.out.println("Total Cost: " + calc.getTotalCost() + " Euros");
 		}
 	
 

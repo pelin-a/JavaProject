@@ -1,3 +1,5 @@
+
+//Pelinsu
 package containers;
 
 public class Container {
@@ -12,9 +14,8 @@ public class Container {
 		this.length=length;
 		this.width=width;
 		this.height=height;
-		this.small=small;
-		
-		
+		this.small=small; //true if the container is small
+			
 	}
 	//generated getters and setters
 
@@ -58,7 +59,6 @@ public class Container {
 		
 	}
 	
-	
 	//prints container info
 	public void printContainerInfo() {
 		String str;
@@ -67,15 +67,6 @@ public class Container {
 		System.out.println(str);
 		
 	}
-	
-	public static void main(String[] args) {
 		
-		Container obj=new Container(4.5,2.8,6.8);
-		obj.printContainerInfo();
-		// TODO Auto-generated method stub
-
-	}
-	
-	
 
 }

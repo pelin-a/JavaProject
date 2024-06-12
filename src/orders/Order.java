@@ -1,3 +1,5 @@
+
+//Pelinsu
 package orders;
 import items.Item;
 public class Order {
@@ -22,6 +24,11 @@ public class Order {
 		this.num = num;
 	}
 	
+	public void printOrderInfo() {
+		String str;
+		str="item: "+this.getItem().getName()+", number orderes: "+this.getNum();
+		System.out.println(str);
+	}	
 	}
 	
 	

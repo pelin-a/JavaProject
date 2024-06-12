@@ -1,11 +1,13 @@
+
+//Pelinsu
 package items;
 
 public class Item {
 	
 	//private item attributes
-	private double length; //in cm
-	private double width; //in cm
-	private double height; //in cm
+	private double length; //in m
+	private double width; //in m
+	private double height; //in m
 	private double weight;// in kg
 	private String name;
 	
@@ -43,11 +45,11 @@ public class Item {
 		this.width = width;
 	}
 
-	public double getheight() {
+	public double getHeight() {
 		return height;
 	}
 
-	public void setheight(double height) {
+	public void setHeight(double height) {
 		this.height = height;
 	}
 
@@ -59,18 +61,13 @@ public class Item {
 		this.weight = weight;
 	}
 	
-	public double getArea() {
-		double surArea; // the surface of the bottom of the box
-		surArea= this.length * this.width;
-		return surArea;
-	}
-	
+	// calculates the volume of item's package
 	public double getItemVolume() {
-		double area = this.getArea();
-		double volume = area* this.height;
+		double volume = this.getLength()*this.getWidth()* this.getHeight();
 		return volume;
 		
-	}	
+	}
+	// prints specific item's information
 	public void printItemInfo() {
 		String str;
 		str= "Item name: "+ this.name+"/nItem length: "+ this.length+"cm"+"\nItem width: "+ this.width+"cm" +"\nItem height: "+ this.height+"cm" +
@@ -78,21 +75,6 @@ public class Item {
 		System.out.println(str);
 		
 	}
-	public static void main(String[] args) {
-        // Create an object of MyClass and test its methods
-        Item obj = new Item(4,5.6,6.7,4.8);
-        
-        obj.printItemInfo();
-        
-        
-        // Call methods, set properties, etc.
-    }
-	
-	
-	
-	
-	
-	
 	
 	
 }
